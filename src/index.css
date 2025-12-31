@@ -1,0 +1,73 @@
+/* --- ADD THIS IMPORT AT THE TOP --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- CUSTOM FONTS --- */
+@font-face {
+  font-family: 'Blackpast';
+  src: url('./fonts/Blackpast.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Trusted';
+  src: url('./fonts/Trusted.woff2') format('woff2'),
+       url('./fonts/Trusted.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sunday';
+  src: url('./fonts/Sunday - Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noken';
+  src: url('./fonts/NokenBold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rokhald';
+  src: url('./fonts/Rokhald.ttf') format('truetype'),
+       url('./fonts/Rokhald.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mourich';
+  src: url('./fonts/Mourich Bold.ttf') format('truetype'),
+       url('./fonts/Mourich Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* --- CUSTOM UTILITIES --- */
+.hero-container {
+    clip-path: ellipse(120% 100% at 50% 0%);
+}
+
+#smooth-wrapper {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+#smooth-content {
+  overflow: visible;
+  width: 100%;
+}
