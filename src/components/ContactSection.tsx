@@ -19,7 +19,8 @@ const ContactSection = () => {
     setStatus('sending');
 
     try {
-      const response = await fetch('http://localhost:5000/api/send-inquiry', {
+      fetch(`${import.meta.env.VITE_API_URL}/api/send-inquiry`, {
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -212,3 +213,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
