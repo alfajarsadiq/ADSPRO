@@ -15,34 +15,36 @@ const ContactSection = () => {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('sending');
+  e.preventDefault();
+  setStatus('sending');
 
-    try {
-      fetch(`${import.meta.env.VITE_API_URL}/api/send-inquiry`, {
-
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/send-inquiry`,
+      {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', projectDetails: '' });
-        // Reset button after 3 seconds
-        setTimeout(() => setStatus('idle'), 3000);
-      } else {
-        setStatus('error');
-        setTimeout(() => setStatus('idle'), 3000);
       }
-    } catch (error) {
-      console.error("Submission Error:", error);
+    );
+
+    if (response.ok) {
+      setStatus('success');
+      setFormData({ name: '', email: '', projectDetails: '' });
+      setTimeout(() => setStatus('idle'), 3000);
+    } else {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 3000);
     }
-  };
+  } catch (error) {
+    console.error('Submission Error:', error);
+    setStatus('error');
+    setTimeout(() => setStatus('idle'), 3000);
+  }
+};
+
 
   return (
     <section className="bg-[#131508] text-[#FCFFFC] py-12 md:py-24 px-4 md:px-6 lg:px-8 font-archivo overflow-hidden">
@@ -213,4 +215,5 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
 
