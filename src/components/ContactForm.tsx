@@ -38,7 +38,8 @@ const ContactForm = () => {
 
     try {
       // Backend Endpoint
-      const API_URL = 'http://localhost:5000/api/send-inquiry'; 
+      const API_URL = `${import.meta.env.VITE_API_URL}/api/send-inquiry`;
+
       
       // Sending data with 'projectDetails' key as required by mailController.js
       const response = await axios.post(API_URL, formData);
@@ -209,3 +210,4 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
