@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { AtSign, Phone, Instagram, Youtube } from 'lucide-react';
-import SlideText from './SlideText'; // Ensure this matches your project structure
+import { AtSign, Phone, Instagram, Youtube, Loader2 } from 'lucide-react';
+import SlideText from './SlideText'; 
 
 const ContactForm = () => {
-  // --- Brand Colors extracted from image ---
+  // --- Brand Colors ---
   const designColors = {
-    background: '#D8D4C9', // Beige background
-    textDark: '#1a1a1a',    // Almost black text
-    accent: '#CBF34D',      // The acid green/yellow accent
-    cardBg: '#FFFFFF',      // White card body
-    cardHeaderBg: '#141414' // Black card header
+    background: '#D8D4C9', 
+    textDark: '#1a1a1a',    
+    accent: '#CBF34D',      
+    cardBg: '#FFFFFF',      
+    cardHeaderBg: '#141414' 
   };
 
-  // --- Form State ---
+  // --- Form State: Updated 'message' to 'projectDetails' to match Backend ---
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    projectDetails: ''
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,36 +37,40 @@ const ContactForm = () => {
     setSubmitStatus({ message: '', type: null });
 
     try {
-      // IMPORTANT: Update this URL to match your backend server
+      // Backend Endpoint
       const API_URL = 'http://localhost:5000/api/send-inquiry'; 
       
+      // Sending data with 'projectDetails' key as required by mailController.js
       const response = await axios.post(API_URL, formData);
 
-      setSubmitStatus({ message: response.data.message || 'Message sent successfully!', type: 'success' });
+      setSubmitStatus({ 
+        message: response.data.message || 'Thank you! Your inquiry has been sent.', 
+        type: 'success' 
+      });
+      
       // Reset form on success
       setFormData({
         name: '',
         email: '',
-        message: ''
+        projectDetails: ''
       });
     } catch (error: any) {
-      const errorMessage = error.response?.data?.message || 'An unexpected error occurred. Please try again.';
+      const errorMessage = error.response?.data?.message || 'Failed to connect to server. Please try again.';
       setSubmitStatus({ message: errorMessage, type: 'error' });
     } finally {
       setIsSubmitting(false);
+      // Optional: Clear status after 5 seconds
+      setTimeout(() => setSubmitStatus({ message: '', type: null }), 5000);
     }
   };
 
-  // --- Custom Input Style (Underline Only) ---
   const inputStyle = "w-full bg-transparent border-b border-[#8c8c8c] focus:border-black outline-none py-4 text-[#1a1a1a] placeholder-transparent transition-colors resize-none text-lg";
   const labelStyle = "block text-sm font-medium text-[#4a4a4a] mb-1";
 
   return (
-    // Outer container with the specific Beige background
     <div className="w-full py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: designColors.background }}>
       <div className="max-w-7xl mx-auto">
         
-        {/* HUGE CONTACT HEADING WITH ANIMATION */}
         <div className="mb-16">
           <SlideText className="text-[5rem] md:text-[9rem] font-bold text-[#1a1a1a] leading-none tracking-tight">
             Contact
@@ -106,17 +110,18 @@ const ContactForm = () => {
                 />
               </div>
 
-              {/* Messages */}
+              {/* Project Details (Changed from 'message' for Backend logic) */}
               <div className="relative group">
-                <label htmlFor="message" className={labelStyle}>Messages</label>
+                <label htmlFor="projectDetails" className={labelStyle}>Project Details</label>
                 <textarea 
-                  id="message" 
-                  name="message" 
-                  value={formData.message} 
+                  id="projectDetails" 
+                  name="projectDetails" 
+                  value={formData.projectDetails} 
                   onChange={handleChange} 
                   required 
                   rows={4} 
                   className={inputStyle} 
+                  placeholder="Tell us about your next project..."
                 ></textarea>
               </div>
 
@@ -125,16 +130,23 @@ const ContactForm = () => {
                 <button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="bg-[#141414] text-[#CBF34D] text-sm font-semibold py-4 px-12 rounded-full hover:scale-105 transition-transform duration-300 disabled:opacity-70 shadow-lg"
+                  className="bg-[#141414] text-[#CBF34D] text-sm font-semibold py-4 px-12 rounded-full hover:scale-105 transition-transform duration-300 disabled:opacity-70 shadow-lg flex items-center gap-2"
                 >
-                  {isSubmitting ? 'Sending...' : 'Submit'}
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="animate-spin h-4 w-4" />
+                      Sending...
+                    </>
+                  ) : 'Submit'}
                 </button>
               </div>
 
               {/* Status Message */}
               {submitStatus.message && (
-                <div className={`mt-4 text-sm font-medium ${
-                  submitStatus.type === 'success' ? 'text-green-800' : 'text-red-800'
+                <div className={`mt-4 p-4 rounded-lg text-sm font-medium ${
+                  submitStatus.type === 'success' 
+                    ? 'bg-green-100 text-green-800 border border-green-200' 
+                    : 'bg-red-100 text-red-800 border border-red-200'
                 }`}>
                   {submitStatus.message}
                 </div>
@@ -142,13 +154,11 @@ const ContactForm = () => {
             </form>
           </div>
           
-          {/* --- RIGHT SIDE: The Card Design --- */}
+          {/* --- RIGHT SIDE: Info Card --- */}
           <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
             <div className="bg-white rounded-[2rem] shadow-xl p-2 w-full max-w-md relative">
               
-              {/* Black Header Area with Yellow Dots */}
               <div className="bg-[#141414] rounded-[1.5rem] py-12 px-6 text-center relative mx-1 mt-1">
-                {/* Decorative Dots */}
                 <span className="absolute top-4 left-4 w-1.5 h-1.5 rounded-full bg-[#CBF34D]"></span>
                 <span className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-[#CBF34D]"></span>
                 <span className="absolute bottom-4 left-4 w-1.5 h-1.5 rounded-full bg-[#CBF34D]"></span>
@@ -160,9 +170,7 @@ const ContactForm = () => {
                 </h3>
               </div>
 
-              {/* Contact List */}
               <div className="p-8 space-y-6">
-                {/* Email Item */}
                 <div className="flex items-center space-x-4">
                   <div className="bg-[#141414] w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
                     <AtSign className="h-5 w-5 text-[#CBF34D]" />
@@ -170,7 +178,6 @@ const ContactForm = () => {
                   <span className="text-[#1a1a1a] font-medium text-lg">info@adsprodxb.com</span>
                 </div>
 
-                {/* Phone Item */}
                 <div className="flex items-center space-x-4">
                   <div className="bg-[#141414] w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
                     <Phone className="h-5 w-5 text-[#CBF34D]" />
@@ -178,7 +185,6 @@ const ContactForm = () => {
                   <span className="text-[#1a1a1a] font-medium text-lg">+971 50 928 5454</span>
                 </div>
 
-                {/* Social 1 */}
                 <div className="flex items-center space-x-4">
                   <div className="bg-[#141414] w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
                     <Instagram className="h-5 w-5 text-[#CBF34D]" />
@@ -186,7 +192,6 @@ const ContactForm = () => {
                   <span className="text-[#1a1a1a] font-medium text-lg">@adspro_gfx</span>
                 </div>
 
-                {/* Social 2 */}
                 <div className="flex items-center space-x-4">
                   <div className="bg-[#141414] w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
                     <Youtube className="h-5 w-5 text-[#CBF34D]" />
