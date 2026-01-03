@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
 import Navbar from '../components/Navbar';
@@ -8,11 +8,12 @@ import StatsCardSection from '../components/StatsCardSection';
 import ContactSection from '../components/ContactSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import AboutUsSection from '../components/AboutUsSection';
-import HeroCarousel from '../components/HeroCarousel'; // This now holds the full section
+import HeroCarousel from '../components/HeroCarousel';
 import HomeCTA from '../components/HomeCTA';
 
 // ASSETS
 import heroVideo from '../assets/intro.webm';
+import heroVideoMobile from '../assets/introv.webm'; //
 
 const Home = () => {
   const brandColors = { gold: '#3B82F6', white: '#ffffff', black: '#0F172A' };
@@ -23,14 +24,22 @@ const Home = () => {
 
       {/* --- SECTION 1: PURE HERO VIDEO --- */}
       <section className="relative h-screen w-full overflow-hidden bg-black">
+        {/* Updated Video Component with Dynamic Sources */}
         <video
-          src={heroVideo}
           autoPlay
           loop
           muted
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover opacity-80"
-        />
+        >
+          {/* Mobile Video: Vertical (introv.webm) for screens smaller than 768px */}
+          <source src={heroVideoMobile} type="video/webm" media="(max-width: 767px)" />
+          
+          {/* Desktop Video: Horizontal (intro.webm) for screens 768px and wider */}
+          <source src={heroVideo} type="video/webm" media="(min-width: 768px)" />
+          
+          Your browser does not support the video tag.
+        </video>
         
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black" />
@@ -47,24 +56,14 @@ const Home = () => {
         </motion.div>
       </section>
 
-
-      {/* --- SECTION 2: HERO CONTENT (Replaced with Single Component) --- */}
-      {/* The entire section code has been removed from here because it is now inside HeroCarousel */}
+      {/* --- SECTION 2: HERO CONTENT (HeroCarousel) --- */}
       <HeroCarousel />
 
-
-      {/* --- SERVICES SECTION --- */}
       <FeaturedProducts />
-
       <AboutUsSection brandColors={brandColors} />
-
       <StatsCardSection />
-
       <TestimonialsSection />
-
-      {/* --- CALL TO ACTION SECTION --- */}
       <HomeCTA />
-
       <ContactSection/>
     </div>
   );
