@@ -179,7 +179,7 @@ const Partners = () => {
               
               <div className="relative flex overflow-hidden h-64 items-center">
                   <motion.div
-                      className="flex gap-40 items-center whitespace-nowrap"
+                      className="flex gap-16 items-center whitespace-nowrap"
                       animate={{ x: ['0%', '-33.33%'] }}
                       transition={{ 
                         ease: 'linear', 
