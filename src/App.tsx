@@ -6,8 +6,9 @@ import Home from './pages/Home';
 import About from './pages/About';
 // import Products from './pages/Products';
 import Partners from './pages/Services';
-import GlobalPresence from './pages/GlobalPresence';
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';          // <-- Added
+import BlogPost from './pages/BlogPost';  // <-- Added
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -52,6 +53,10 @@ function App() {
             {/* <Route path="/products" element={<Products />} /> */}
             <Route path="/services" element={<Partners />} />
             <Route path="/contact" element={<Contact />} />
+            
+            {/* New Blog Routes */}
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
           </Route>
         </Routes>
       </div>
