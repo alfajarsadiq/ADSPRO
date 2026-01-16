@@ -10,7 +10,7 @@ const BLOG_CONTENT: any = {
     title: "Why Every Business Needs a Digital Marketing & Design Agency in Dubai",
     date: "Jan 22, 2026",
     category: "Digital Agency",
-    image: "https://www.adsprodxb.com/adspro-branding-strategy.jpg",
+    image: "https://www.adsprodxb.com/adspro-branding-strategy.webp",
     backlink: "https://adspro-dubai.blogspot.com/2026/01/digital-marketing-design-agency-dubai.html",
     content: (
       <>
@@ -69,7 +69,7 @@ const BLOG_CONTENT: any = {
     title: "How Professional Branding & Design Helps Businesses Grow in Dubai",
     date: "Jan 20, 2026",
     category: "Branding",
-    image: "https://www.adsprodxb.com/How%20Professional%20Branding%20Design%20Helps%20Businesses%20Grow%20in%20Dubai.jpg",
+    image: "https://www.adsprodxb.com/How%20Professional%20Branding%20Design%20Helps%20Businesses%20Grow%20in%20Dubai.webp",
     backlink: "https://adspro-dubai.blogspot.com/2026/01/professional-branding-design-dubai.html",
     content: (
       <>
@@ -137,7 +137,7 @@ const BLOG_CONTENT: any = {
     title: "Why Every Business Needs a High-Performance Website in Dubai",
     date: "Jan 18, 2026",
     category: "Web Development",
-    image: "https://www.adsprodxb.com/Adspro-Website-Business%20Growth%20Agency.jpg",
+    image: "https://www.adsprodxb.com/Adspro-Website-Business%20Growth%20Agency.webp",
     backlink: "https://adspro-dubai.blogspot.com/2026/01/high-performance-website-dubai.html",
     content: (
       <>
@@ -196,7 +196,7 @@ const BLOG_CONTENT: any = {
     title: "How Digital Marketing Helps Local Businesses in Dubai Get More Leads",
     date: "Jan 16, 2026",
     category: "Digital Marketing",
-    image: "https://www.adsprodxb.com/AdsPro%20Designing%20LLC%20Dubai%20Business%20Growth.jpg",
+    image: "https://www.adsprodxb.com/AdsPro%20Designing%20LLC%20Dubai%20Business%20Growth.webp",
     backlink: "https://adspro-dubai.blogspot.com/2026/01/digital-marketing-local-business-dubai.html",
     content: (
       <>
@@ -391,5 +391,6 @@ const BlogPost = () => {
     </div>
   );
 };
+
 
 export default BlogPost;
