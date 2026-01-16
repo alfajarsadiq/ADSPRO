@@ -3,10 +3,12 @@ import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-
 import { Phone, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
+// UPDATED: Added 'BLOG' to the navigation links
 const navLinks = [
   { name: 'HOME', path: '/' },
   { name: 'ABOUT', path: '/about' },
   { name: 'SERVICES', path: '/services' },
+  { name: 'BLOG', path: '/blog' },
   { name: 'CONTACT', path: '/contact' },
 ];
 
@@ -36,7 +38,7 @@ const Navbar = () => {
     lastYRef.current = latest;
   });
 
-  // UPDATED: Added 'font-poppins' to the base styles
+  // Base styles for neumorphic buttons
   const baseNeuStyle = "relative flex items-center justify-center transition-all duration-300 ease-in-out rounded-2xl text-neu-text font-bold tracking-wide bg-neu-bg font-poppins";
 
   return (
@@ -92,7 +94,7 @@ const Navbar = () => {
         {/* --- Right Side: Phone Button --- */}
         <div className="hidden md:flex items-center">
             <a 
-                href="tel:+971500000000"
+                href="tel:+971509285454"
                 className={`${baseNeuStyle} gap-2 px-6 py-3 group ${
                     isAtTop 
                     ? 'shadow-none text-neu-text hover:text-brand-lime' 
@@ -146,12 +148,12 @@ const Navbar = () => {
                     })}
                     <div className="h-px bg-gray-200 w-full my-4" />
                     <a 
-                        href="tel:+971500000000" 
+                        href="tel:+971509285454" 
                         className={`${baseNeuStyle} gap-3 py-4 shadow-neu-outset active:shadow-neu-inset text-neu-text hover:text-brand-lime`}
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
                         <Phone className="w-5 h-5" />
-                        +971 50 000 0000
+                        +971 50 928 5454
                     </a>
                 </div>
             </motion.div>
