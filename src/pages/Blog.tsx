@@ -11,7 +11,7 @@ const BLOG_POSTS = [
     excerpt: "In today’s competitive business environment, having a strong digital presence is no longer optional. Businesses in Dubai must adapt to modern branding to stay relevant.",
     date: "Jan 22, 2026",
     author: "AdsPro Team",
-    image: "https://www.adsprodxb.com/adspro-branding-strategy.jpg",
+    image: "https://www.adsprodxb.com/adspro-branding-strategy.webp",
     category: "Digital Agency"
   },
   {
@@ -20,7 +20,7 @@ const BLOG_POSTS = [
     excerpt: "Branding is more than just visuals. It is the foundation of how customers perceive, trust, and choose a business in a competitive market like Dubai.",
     date: "Jan 20, 2026",
     author: "AdsPro Team",
-    image: "https://www.adsprodxb.com/How%20Professional%20Branding%20Design%20Helps%20Businesses%20Grow%20in%20Dubai.jpg",
+    image: "https://www.adsprodxb.com/How%20Professional%20Branding%20Design%20Helps%20Businesses%20Grow%20in%20Dubai.webp",
     category: "Branding"
   },
   {
@@ -29,7 +29,7 @@ const BLOG_POSTS = [
     excerpt: "In a fast-growing business environment like Dubai, a website is more than just an online presence. It is a powerful business tool that builds credibility and generates leads.",
     date: "Jan 18, 2026",
     author: "AdsPro Team",
-    image: "https://www.adsprodxb.com/Adspro-Website-Business%20Growth%20Agency.jpg",
+    image: "https://www.adsprodxb.com/Adspro-Website-Business%20Growth%20Agency.webp",
     category: "Web Development"
   },
   {
@@ -38,7 +38,7 @@ const BLOG_POSTS = [
     excerpt: "Dubai is one of the most competitive business markets in the world. Discover how digital marketing has become the most effective way to generate leads, build trust, and grow consistently.",
     date: "Jan 16, 2026",
     author: "AdsPro Team",
-    image: "https://www.adsprodxb.com/AdsPro%20Designing%20LLC%20Dubai%20Business%20Growth.jpg",
+    image: "https://www.adsprodxb.com/AdsPro%20Designing%20LLC%20Dubai%20Business%20Growth.webp",
     category: "Digital Marketing"
   }
 ];
@@ -168,5 +168,6 @@ const Blog = () => {
     </div>
   );
 };
+
 
 export default Blog;
