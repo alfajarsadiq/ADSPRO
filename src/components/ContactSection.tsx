@@ -98,7 +98,7 @@ const ContactSection = () => {
                 </motion.a>
 
                 <motion.a 
-                  href="tel:+971509285454"
+                  href="tel:+971503265454"
                   className="flex items-center gap-4 md:gap-6 group"
                 >
                   <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1C1E14] border border-[#FCFFFC]/5 flex items-center justify-center group-hover:border-[#B1DC40]/50 group-hover:bg-[#B1DC40]/10 transition-all duration-300">
@@ -106,7 +106,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-[10px] md:text-xs text-[#FCFFFC]/40 font-medium mb-0.5">Call us on</p>
-                    <p className="text-base md:text-lg font-medium group-hover:text-[#B1DC40] transition-colors">+971 50 928 5454</p>
+                    <p className="text-base md:text-lg font-medium group-hover:text-[#B1DC40] transition-colors">+971 50 326 5454</p>
                   </div>
                 </motion.a>
 
@@ -215,5 +215,6 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
 
 
