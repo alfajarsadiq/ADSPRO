@@ -94,9 +94,9 @@ const Footer = () => {
             <h4 className="text-[#B1DC40] font-bold text-lg mb-8">Contact</h4>
             <ul className="space-y-4 text-[#FCFFFC]/70 text-sm font-medium">
               <li>
-                <a href="tel:+97150509285454" className="flex items-center gap-3 hover:text-[#B1DC40] transition-colors">
+                <a href="tel:+971503265454" className="flex items-center gap-3 hover:text-[#B1DC40] transition-colors">
                   <Phone size={16} className="text-[#B1DC40]" />
-                  +971 50 928 5454
+                  +971 50 326 5454
                 </a>
               </li>
               <li>
@@ -108,7 +108,7 @@ const Footer = () => {
               <li>
                 <a href="mailto:info@adspro.ae" className="flex items-center gap-3 hover:text-[#B1DC40] transition-colors">
                    <Mail size={16} className="text-[#B1DC40]" />
-                   info@adsprodxb.com
+                   adsprodxb@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3 leading-relaxed pt-2">
