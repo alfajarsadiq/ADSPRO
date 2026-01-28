@@ -183,7 +183,7 @@ const ContactForm = () => {
                   <div className="bg-[#141414] w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
                     <Phone className="h-5 w-5 text-[#CBF34D]" />
                   </div>
-                  <span className="text-[#1a1a1a] font-medium text-lg">+971 50 928 5454</span>
+                  <span className="text-[#1a1a1a] font-medium text-lg">+971 50 326 5454</span>
                 </div>
 
                 <div className="flex items-center space-x-4">
@@ -210,4 +210,5 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
 
