@@ -94,7 +94,7 @@ const Navbar = () => {
         {/* --- Right Side: Phone Button --- */}
         <div className="hidden md:flex items-center">
             <a 
-                href="tel:+971509285454"
+                href="tel:+971503265454"
                 className={`${baseNeuStyle} gap-2 px-6 py-3 group ${
                     isAtTop 
                     ? 'shadow-none text-neu-text hover:text-brand-lime' 
@@ -102,7 +102,7 @@ const Navbar = () => {
                 }`}
             >
                 <Phone className="w-4 h-4 transition-colors" />
-                <span>+971 50 928 5454</span>
+                <span>+971 50 326 5454</span>
             </a>
         </div>
 
