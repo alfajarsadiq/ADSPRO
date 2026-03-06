@@ -176,7 +176,7 @@ const ContactForm = () => {
                   <div className="bg-[#141414] w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
                     <AtSign className="h-5 w-5 text-[#CBF34D]" />
                   </div>
-                  <span className="text-[#1a1a1a] font-medium text-lg">info@adsprodxb.com</span>
+                  <span className="text-[#1a1a1a] font-medium text-lg">adsprodxb@gmail.com</span>
                 </div>
 
                 <div className="flex items-center space-x-4">
@@ -210,5 +210,6 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
 
 
