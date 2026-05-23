@@ -45,7 +45,7 @@ const services = [
 
 // --- WhatsApp Handler ---
 const handleWhatsAppEnquiry = (serviceName: string) => {
-  const phoneNumber = '971585639040';
+  const phoneNumber = '971503265454';
   const message = `Hello! I am interested in your "${serviceName}" service. Can we discuss?`;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
